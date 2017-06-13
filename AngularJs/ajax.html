@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>AngularJs Ajax</title>
+    <script src="./lib/angular/angular.js"></script>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("display", function($scope, $http){
+            console.log("App controller");
+            
+            
+            $scope.readData = function (){
+                $http({
+                    method: "get",
+                    url: "./dummyServer/emp.json"
+                })
+                .success(function(res){
+                    console.log("Server sent response is "+res);
+                    console.log(res);
+                })
+                .error(function(xhr, a, b){
+                    console.log("Some error occurred on server");
+                    console.log(xhr);
+                    console.log(a);
+                    console.log(b);
+                })
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="display">
+        
+        <button ng-click="readData()">Read File</button>
+
+    </div>
+
+
+</body>
+</html>
+
