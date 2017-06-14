@@ -2,16 +2,19 @@ Day 1:
 	Basics of javascript (on demand)
 	AngularJS
 		1 difference b/w angular & jquery
-		2 MVC
-		3 Ajax
+		2 Modules
+		3 Controllers
+		4 MVC
+		5 Ajax
 		
 Day 2:
 	AngularJS
 		1 ng-repeat
 		2 filter
-		3 SinglePageApplication
-
 	Exercise
 		1 Send a request to server for employee list and display the employee name in a table. 
 		2 When clicked on the head of the table it should be sorted and when clicked again sorting should be in reverse order.
 		3 When clicked on the emp name, another table in another page should be visible with all the emp data.
+		
+	SpringMVC
+		1 Spring Rest
