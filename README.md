@@ -1,5 +1,5 @@
 
-# Day 1: #
+># Day 1: #
 	## Basics of javascript (on demand) ##
 	## AngularJS##
 		1. difference b/w angular & jquery
@@ -8,7 +8,7 @@
 		4. MVC
 		5. Ajax
 		
-# Day 2:#
+># Day 2:#
 	## AngularJS##
 		1. ng-repeat
 		2. filter
