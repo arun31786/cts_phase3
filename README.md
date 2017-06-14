@@ -15,7 +15,7 @@
 >	2. Exercise
 >		1. Send a request to server for employee list and display the employee name in a table. 
 >		2. When clicked on the head of the table it should be sorted and when clicked again sorting should be in reverse order.
->		3.* When clicked on the emp name, another table in another page should be visible with all the emp data.
+>		+ When clicked on the emp name, another table in another page should be visible with all the emp data.
 		
 >	3. SpringMVC
 >		1. WebServices (theory)
@@ -31,6 +31,6 @@
 >		4. Custom directives
 
 >	2. Exercise
->		1.* Send a request to server for employee list and display the employee name in a table. 
->		2.* When clicked on the head of the table it should be sorted and when clicked again sorting should be in reverse order.
+>		+. Send a request to server for employee list and display the employee name in a table. 
+>		+. When clicked on the head of the table it should be sorted and when clicked again sorting should be in reverse order.
 >		3. When clicked on the emp name, another table in another page should be visible with all the emp data.
