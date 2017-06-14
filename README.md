@@ -1,6 +1,6 @@
 
 # Day 1: #
-	## Basics of javascript (on demand)##
+	## Basics of javascript (on demand) ##
 	## AngularJS##
 		1. difference b/w angular & jquery
 		2. Modules
