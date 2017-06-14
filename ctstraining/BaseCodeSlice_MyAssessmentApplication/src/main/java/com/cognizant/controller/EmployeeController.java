@@ -33,7 +33,8 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService service;
 	private List<Employee> employees;
-	
+
+//	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/employee
 	@RequestMapping(value="/employee", method=RequestMethod.GET)
 //	public String getEmployee(@ModelAttribute("employee") Employee employee){
 		public String getEmployee(Model model){
@@ -94,7 +95,7 @@ public class EmployeeController {
 
 	}
 	
-	
+//	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/employees?name=mark
 	@RequestMapping(value="/employees",method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody  List<Employee> getEmployees(@RequestParam("name") String name){
 		
