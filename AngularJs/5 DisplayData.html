@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>AngularJs Display Data</title>
+    <script src="./lib/angular/angular.js"></script>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("ctrl", function($scope, $http){
+            
+
+            $scope.order = '-first_name';
+
+            $scope.getEmps= function (){
+            console.log("get data");
+                $http({
+                    url: "./dummyServer/emp.json",
+                    method:"get",
+                    // data: null
+                }).success(function(res){
+                    console.log(res);
+                    $scope.emps = res;
+                }).error(function(){
+                    console.log("error in fetching the data");
+                })
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="ctrl">
+        
+        <button ng-click="getEmps()">Get Employees</button>
+        <hr/>
+        <input type="search" ng-model="searchObj.$"/>
+        <hr/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in emps | orderBy: order | filter: searchObj">
+
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.first_name}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</body>
+</html>
+
