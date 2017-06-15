@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Data sharing demo</title>
+	<style>
+		div{
+			border: 2px solid black;
+			height: 100px;
+		}
+	</style>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('app', []);
+		
+		app.service('UserService', function(){
+			var user = {
+				name: '',
+				password: ''
+			}
+			return user; 
+		})
+		
+		app.controller('UserController_1', function($scope, UserService){
+			$scope.data = UserService;
+			$scope.data.name = "Puneet";
+			$scope.data.password = "12345";
+		})
+		app.controller('UserController_2', function($scope, UserService){
+			$scope.data = UserService;
+			$scope.setName = function(name){
+				$scope.data.name = name;
+			}
+			$scope.setPassword = function(pwd){
+				$scope.data.password = pwd;
+			}
+		})
+	</script>
+</head>
+<body ng-app="app">
+	<div ng-controller="UserController_1">
+		{{data}}
+	</div>
+	<div ng-controller="UserController_2">
+		{{data}}
+		<br/>
+		<button ng-click="setName('Miley Cyrus')">ChengeName</button>
+		<button ng-click="setPassword('007')">ChengePassword</button>
+	</div>
+</body>
+</html>

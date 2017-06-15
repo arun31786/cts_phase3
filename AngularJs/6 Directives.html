@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Angular Directives Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('app', []);
+		app.controller('ctrl', function($scope, $timeout){
+//			$scope.someProperty = true;
+
+			$scope.isDisabled = true;
+			$timeout(function(){
+				$scope.isDisabled = false;
+				
+			}, 5000)
+		})
+	</script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+	<h2>ng-disabled</h2>
+	<input type="text" ng-model="someProperty">
+	<button ng-disabled="!someProperty">A Button</button>
+	
+	<textarea ng-disabled="isDisabled" cols="30" rows="10"></textarea>
+	<hr/>
+	<h2>ng-readonly</h2>
+	<input type="text" ng-model="someProperty" ng-readonly="true">
+	<hr/>
+	<h2>ng-checked</h2>
+	<input type="checkbox" ng-checked="checkBoxPropery" ng-init="checkBoxPropery=true" ng-model="checkBoxPropery">
+	CheckBoxProperty: {{checkBoxPropery}}
+	
+	<hr/>
+	<h2>ng-selected</h2>
+	Change Your Gender: <input type="checkbox" ng-model="isMale"><br/>
+	<select ng-disabled="true">
+		<option>Male</option>
+		<option ng-selected="isMale">Female</option>
+	</select>
+	
+	<hr/>
+	<h2>ng-show | ng-hide</h2>
+	<p ng-show="isDisabled">I am paragraph 1</p>
+	<p ng-hide="isDisabled">I am paragraph 2</p>
+	
+	<hr/>
+	<h2>ng-if</h2>
+	<p ng-if="5<66">66 is larger than 5</p>
+	<p ng-if="5>66">5 is not larger than 66</p>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

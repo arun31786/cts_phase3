@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Single page app demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular/angular-route.min.js"></script>
+	<script>
+		var app = angular.module('spa', ['ngRoute']);
+		app.controller('homeCtrl', function($scope){
+			console.log("in home ctrl");
+			$scope.name = "Home"
+		});
+		app.controller('accountCtrl', function($scope){
+			console.log("in account page");
+			$scope.name = "Account"
+		});
+		
+		app.config(function($routeProvider){
+			$routeProvider.when("/", {
+				// template: "<h1>Some Text</h1>",
+				templateUrl: './templates/home.html',
+				controller: 'homeCtrl'
+			}).when("/account", {
+				// template: "<h2>My Account Page</h2>{{name}}<footer>End of the page</footer>",
+				templateUrl: "./templates/account.html",
+				controller: "accountCtrl"
+			}).otherwise({
+//				template: "Not available"
+				redirectTo: '/'
+			})
+		})
+	</script>
+</head>
+<body ng-app="spa">
+	
+	<ng-view></ng-view>
+</body>
+</html>
