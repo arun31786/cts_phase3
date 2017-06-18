@@ -36,3 +36,11 @@
 >		3. When clicked on the emp name, another table in another page should be visible with all the emp data.
 
 ># Day 4:
+>	Working on integeration
+
+># Day 5:
+>	1. Client Side Validation
+>		1. HTML5 validation attributes
+>		2. Angularjs validation
+>
+>
