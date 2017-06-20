@@ -1,0 +1,63 @@
+<html ng-app="angularjs_internationalization">
+<head>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js" ></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.9.0/angular-translate.min.js"></script>
+<!--	<script src="app.js"></script>-->
+<!--	<link href="style.css" rel="stylesheet" type="text/css"  />-->
+	<title>AngularJs I18N</title>
+	<script>
+		var app = angular.module('angularjs_internationalization',['pascalprecht.translate']);
+ 
+		app.config(function($translateProvider) {
+			$translateProvider.useSanitizeValueStrategy('escapeParameters');
+		  $translateProvider.translations('en_US', {
+			TITLE: 'Login Page',
+			USERNAME: 'Username',
+			PASSWORD: 'Password',
+			LOGIN: 'Login'
+		  });
+
+		  $translateProvider.translations('fr_CA', {
+			TITLE: 'Formulaire de login',
+			USERNAME: 'Identifiant',
+			PASSWORD: 'Mot de passe',
+			LOGIN: 'Connexion'
+		  });
+		  $translateProvider.translations('hi_IN', {
+			TITLE: 'प्रवेश प्रष्ठ',
+			USERNAME: 'उपयोगकर्ता का नाम',
+			PASSWORD: 'निजी पहचान',
+			LOGIN: 'आगे बढें'
+		  });
+//		    $translateProvider.determinePreferredLanguage();
+		    $translateProvider.determinePreferredLanguage('en_US');
+		});
+		
+		app.controller('ctrl', function($scope, $translate){
+			$scope.changeLang = function(lang){
+				$translate.use(lang);
+			}
+		});
+	</script>
+</head>
+<body ng-controller="ctrl">
+<button ng-click="changeLang('en_US')">English</button>
+<button ng-click="changeLang('hi_IN')">Hindi</button>
+<button ng-click="changeLang('fr_CA')">French</button>
+<h1>{{'TITLE' | translate}}</h1>
+	<div class="loginpanel">
+	  <div class="txt">
+	    <input id="user" type="text" placeholder="{{'USERNAME' | translate}}" />
+	    <label for="user" class="entypo-user"></label>
+	  </div>
+	  <div class="txt">
+	    <input id="pwd" type="password" placeholder="{{'PASSWORD' | translate}}" />
+	    <label for="pwd" class="entypo-lock"></label>
+	  </div>
+	  <div class="buttons">
+	    <input type="button" value="{{'LOGIN' | translate}}" />
+	  </div>
+	</div>
+<span class="resp-info"></span>
+</body>
+</html>
