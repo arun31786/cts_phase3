@@ -33,10 +33,32 @@
 		    $translateProvider.determinePreferredLanguage('en_US');
 		});
 		
-		app.controller('ctrl', function($scope, $translate){
+		app.controller('ctrl', function($scope, $translate, $locale, $window){
+		
+
+		console.log($locale.id);
+			/*
 			$scope.changeLang = function(lang){
 				$translate.use(lang);
 			}
+			*/
+			$scope.changeLang = function(lang){
+				$locale.id = lang;
+				$translate.use($locale.id);
+				
+				var langLocale = $window.navigator.language || $window.navigator.userLanguage; 
+				if (langLocale === 'en-US') {
+				  console.log("language is english");
+				}
+				if (langLocale === 'hi_IN') {
+				  console.log("language is hindi");
+				}
+				if (langLocale === 'fr_CA') {
+				  console.log("language is france");
+				}
+
+			}
+
 		});
 	</script>
 </head>
