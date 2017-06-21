@@ -36,11 +36,26 @@
 >		3. When clicked on the emp name, another table in another page should be visible with all the emp data.
 
 ># Day 4:
->	Working on integeration
+>		+ Working on integeration
 
 ># Day 5:
 >	1. Client Side Validation
 >		1. HTML5 validation attributes
 >		2. Angularjs validation
->
+
+># Day 6:
+>	1. Maven
+>		1. Installation
+>			+ Create projects
+>			+ Create web project
+>			+ Create Rest jersey project
+>		2. pom.xml 
+>		3. Build
+>		4. .m2 directory
+>		5. settings.xml -> proxy settings
+
+># Day 7:		
+>		1. How to write annotations
+>		2. SpringMVC validation via custom annotation
+>		3. Junit test cases for spring mvc
 >
