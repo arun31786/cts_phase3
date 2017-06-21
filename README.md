@@ -55,7 +55,7 @@
 >		5. settings.xml -> proxy settings
 
 ># Day 7:		
->		1. How to write annotations
->		2. SpringMVC validation via custom annotation
->		3. Junit test cases for spring mvc
+>	1. How to write annotations
+>	2. SpringMVC validation via custom annotation
+>	3. Junit test cases for spring mvc
 >
