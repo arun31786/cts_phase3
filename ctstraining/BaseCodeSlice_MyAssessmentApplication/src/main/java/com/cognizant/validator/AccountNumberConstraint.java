@@ -10,9 +10,9 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 @Documented
+@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = AccountNumberValidator.class)
 @Target( { ElementType.METHOD, ElementType.FIELD })
-@Retention(RetentionPolicy.RUNTIME)
 public @interface AccountNumberConstraint {
     String message() default "Account number is not valid";
     int min() default 5;

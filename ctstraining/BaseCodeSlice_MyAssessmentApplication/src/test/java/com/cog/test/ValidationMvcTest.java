@@ -23,8 +23,16 @@ public class ValidationMvcTest {
     public void setup(){
         this.mockMvc = MockMvcBuilders.standaloneSetup(new ValidatedAccountController()).build();
     }
+	@Test
+	public void getShouldResultAccountHomePage() throws Exception{
+	    this.mockMvc.perform(get("/validateAccount")).andExpect(view().name("accountHome"));
+	}
+	@Test
+	public void postShouldResultAccountHomePage() throws Exception{
+	    this.mockMvc.perform(post("/validateAccount")).andExpect(view().name("accountHome"));
+	}
     @Test
-    public void givenNotMatchingEmailPassword_whenPostNewUserForm_thenOk() 
+    public void stringIsNotValidParameter() 
       throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
           .post("/validateAccount")
@@ -37,7 +45,19 @@ public class ValidationMvcTest {
     }
     
     @Test
-    public void givenMatchingEmailPassword_whenPostNewUserForm_thenOk() throws Exception {
+    public void blankStringIsNotValidParameter() 
+      throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders
+          .post("/validateAccount")
+          .accept(MediaType.TEXT_HTML)
+          .param("account", ""))
+          .andExpect(view().name("accountHome"))
+          .andExpect(model().errorCount(1))
+          .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void post6DigitAccountNumber() throws Exception {
     	String accountNum = "012345";
         this.mockMvc.perform(MockMvcRequestBuilders
         		.post("/validateAccount")
@@ -45,15 +65,6 @@ public class ValidationMvcTest {
                 .param("account", accountNum))
                 .andExpect(model().attribute("message", "Successfully saved account: "+accountNum))
                 .andExpect(view().name("validAccount"))
-                .andExpect(status().isOk())
-                .andDo(print());
+                .andExpect(status().isOk());
     }
-	@Test
-	public void givenPhonePageUri_whenMockMvc_thenReturnsPhonePage() throws Exception{
-	    this.mockMvc.perform(get("/validateAccount")).andExpect(view().name("accountHome"));
-	}
-	@Test
-	public void givenPhonePageUri_whenMockMvc_thenReturnsPhonePage2() throws Exception{
-	    this.mockMvc.perform(post("/validateAccount")).andExpect(view().name("accountHome"));
-	}
 }
