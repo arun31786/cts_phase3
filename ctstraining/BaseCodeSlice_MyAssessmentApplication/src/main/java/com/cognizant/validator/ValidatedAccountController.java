@@ -18,7 +18,7 @@ public class ValidatedAccountController {
         return "accountHome";
     }
      
-//	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/validatePhone
+//	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/validateAccount
 	@RequestMapping(value="/validateAccount", method=RequestMethod.POST)
     public String submitForm(@Valid ValidatedAccount validatedAccount, BindingResult result, Model m) {
         if(result.hasErrors()) {
