@@ -7,6 +7,7 @@ public class AccountNumberValidator implements
 ConstraintValidator<AccountNumberConstraint, String> {
 
 	private AccountNumberConstraint accountNumber;
+	
   @Override
   public void initialize(AccountNumberConstraint accountNumber) {
 	  this.accountNumber = accountNumber;

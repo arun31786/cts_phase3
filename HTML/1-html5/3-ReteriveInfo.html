@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Retrieve info from data</title>
+    <script type="text/javascript">
+        if(sessionStorage.myname){
+            document.write("Your Name is "+sessionStorage.myname);
+        }
+        if(localStorage.myAge){
+            document.write(" Your age is "+localStorage.myAge);
+        }
+        if(sessionStorage.getItem("phone")!="")
+        {
+            document.write(" Your Phone is "+sessionStorage.getItem("phone"));
+            sessionStorage.removeItem("phone");  //only phone gone
+            //sessionStorage.clear(); Everything gone
+        }
+        var doctorsArr = JSON.parse(sessionStorage.doctors);
+        document.write(" doctorsArr "+doctorsArr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

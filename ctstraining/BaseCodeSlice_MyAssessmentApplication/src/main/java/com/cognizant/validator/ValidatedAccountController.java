@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ValidatedAccountController {
   
+	
+	
 //	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/validateAccount
 	@RequestMapping(value="/validateAccount", method=RequestMethod.GET)
     public String loadFormPage(Model m) {
         m.addAttribute("validatedAccount", new ValidatedAccount());
         return "accountHome";
     }
-     
+
 //	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/validateAccount
 	@RequestMapping(value="/validateAccount", method=RequestMethod.POST)
     public String submitForm(@Valid ValidatedAccount validatedAccount, BindingResult result, Model m) {

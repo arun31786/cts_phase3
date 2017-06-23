@@ -104,6 +104,7 @@ public class EmployeeController {
 		employees = new ArrayList<Employee>();
 		employees.add(emp1);
 		employees.add(emp2);
+//		System.out.println(MediaType.APPLICATION_JSON);
 		return employees;
 	}
 	

@@ -1,0 +1,10 @@
+@font-face
+{
+font-family: myFirstFont;
+src: url(../font/AYUMA2YK.TTF);
+}
+
+div
+{
+font-family:myFirstFont;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mp3 Player</title>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<img id="album" src="../image/BMB-Zinda.jpg" width="90" height="90">
+<audio id="myPlayer" controls="controls" loop="loop">
+    <source src="../audio/BMB-Zinda.mp3" type="audio/mp3">
+    Your browser is not supporting audio tag
+</audio>
+
+<div style="border: 1px solid darkslategrey; width: 200px;">
+    <img src="../image/BMB-Zinda.jpg" width="50" height="50"><a href="#">BMB-Zinda</a><br>
+    <img src="../image/SunnRahaHai.jpg" width="50" height="50"><a href="#">SunnRahaHai</a><br>
+    <img src="../image/TumHiHo.jpg" width="50" height="50"><a href="#">TumHiHo</a><br>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("a").click(function(){
+            var name = $(this).text();
+            document.getElementById("myPlayer").pause();
+            document.getElementById("album").src="../image/"+name+".jpg";
+            document.getElementById("myPlayer").src="../audio/"+name+".mp3";
+            document.getElementById("myPlayer").play();
+        });
+    });
+</script>
+
+
+
+
+
+<!--<button onclick="document.getElementById('myPlayer').play()">Play</button>
+<button onclick="document.getElementById('myPlayer').pause()">Pause</button>
+<button onclick="document.getElementById('myPlayer').pause();document.getElementById('myPlayer').currentTime=0;">Stop</button>-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+<div id="show"></div>
+<script>
+    if(typeof(Storage)!=="undefined") {
+        localStorage.name="TKHTS";
+        localStorage.address="in your heart";
+        document.getElementById("show").innerHTML=
+                "Name: " + localStorage.name;
+        document.getElementById("show").innerHTML+="<br>Phone: 21456";
+    }
+    else {
+        document.getElementById("show").innerHTML=
+                "Sorry, no support for web storage";
+    }
+</script>
+
+</body>
+</html>

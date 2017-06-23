@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>WebStorage - Session Storage Demo- Powered by TKHTS.COM</title>
+    <script type="text/javascript">
+        var doctors = [
+            'rem',
+            'rich_clark',
+            'brucel',
+            'jackosborne',
+            'leads',
+            'akamike',
+            'boblet'];
+        sessionStorage.doctors = JSON.stringify(doctors);
+        sessionStorage.setItem("phone","2222");
+        if(!sessionStorage.myname){
+            sessionStorage.myname="Eva";
+        }
+        if( sessionStorage.hitCount ){
+            sessionStorage.hitCount = Number(sessionStorage.hitCount) +1;
+        }else{
+            sessionStorage.hitCount = 1;
+        }
+        sessionStorage.setItem("ARUN","Trainer");
+
+        document.write("Total Hits :" + sessionStorage.hitCount + " "+sessionStorage.myname );
+    </script>
+    <p>Refresh the page to increase number of hits.</p>
+    <p>Close the window and open it again and check the result.</p>
+</head>
+<body>
+<a href="ReteriveInfo.html">Info</a>
+
+</body>
+</html>

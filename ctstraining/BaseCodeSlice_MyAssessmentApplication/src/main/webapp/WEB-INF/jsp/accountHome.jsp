@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form:form action="./validateAccount" modelAttribute="validatedAccount">
+<form:form action="./validateAccount" modelAttribute="validatedAccount" method="post">
     <label for="accountInput">Account: </label>
     <form:input path="account" id="accountInput" />
     <form:errors path="account" cssClass="error" />
@@ -16,3 +16,19 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
