@@ -1,0 +1,127 @@
+body{
+	background-color : #DAD5C1;
+	font-family : century, arial, tahoma;
+}
+
+h3{
+	text-align : center;
+	text-decoration : underline;
+}
+
+p{
+	padding : 2%;	
+}
+
+img{
+	text-align : center;
+	max-width : 100%;
+	height : auto;
+	width : auto;	
+}
+
+#wrapper{
+	margin : 0 auto;
+	max-width : 980px;
+	width : 96%;
+	background : #CBBB9B;
+	padding : 2%;
+	border-radius : 10px;
+}
+
+header{
+	padding : 5px;
+	text-align : center;
+}
+
+nav {
+	background : #A09885;
+	padding : 0;
+	margin : 0;
+	border-radius : 10px;	
+}
+nav ul{
+	list-style : none;
+	margin-left : 7%;
+	padding : 0;
+}
+
+nav li a {
+	color : #000;
+	display : block;
+	float : left;
+	padding : 20px;
+	text-decoration : none;	
+}
+
+nav a:hover, nav li.active a {
+	background-color : #322F2C;
+	color : #fff;
+}
+
+.clear{
+	clear : both;
+}
+
+#social{
+    text-align : center;
+}
+
+#social img{
+	padding-top : 5px;
+	height : 50px;
+	width : 50px;	
+}
+
+.left-col{
+	background : #DAD5C1;
+	width : 60%;
+	float : left;
+	margin-top : 2%;
+	border-radius : 10px;
+}
+
+.sidebar{
+	background : #DAD5C1;
+	width : 38%;
+	float : right;
+	margin-top : 2%;
+	border-radius : 10px;
+}
+
+.vid{
+	position : relative;
+	padding-bottom : 56%;
+	padding-top : 30%;
+	height : 0;
+	overflow : hidden;	
+}
+.vid iframe{
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+}
+
+footer{
+	background : #A09885;
+	border-radius : 10px;
+    padding : 3px 0;
+    margin-top : 10px;
+}
+
+/*----MEDIA!!----*/
+
+@media screen and (max-width: 740px){
+	.left-col{
+		width : 100%;
+	}
+	.sidebar{
+		width : 100%;
+	}
+
+	#social img{
+		height : 50px;
+		width : 50px;
+	}
+}

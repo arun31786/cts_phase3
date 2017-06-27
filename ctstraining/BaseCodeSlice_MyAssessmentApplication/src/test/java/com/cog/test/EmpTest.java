@@ -14,14 +14,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import com.cognizant.controller.EmployeeController;
 import com.cognizant.validator.ValidatedAccountController;
 
-public class ValidationMvcTest {
+public class EmpTest {
 	private MockMvc mockMvc;
 
     @Before
     public void setup(){
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new ValidatedAccountController()).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new EmployeeController()).build();
     }
 //	@Test
 	public void getShouldResultAccountHomePage() throws Exception{
@@ -72,15 +73,17 @@ public class ValidationMvcTest {
     public void post6DigitAccountNumber1() throws Exception {
     	String accountNum = "012345";
         this.mockMvc.perform(MockMvcRequestBuilders
-        		.post("/validateAccount1")
-                .accept(MediaType.TEXT_HTML)
-                .param("account", accountNum))
-                .andExpect(model().attribute("message", "Successfully saved account: "+accountNum))
-                .andExpect(view().name("validAccount"))
-                .andExpect(status().isOk());
+        		.get("/employees")
+//                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .param("name", "amit"))
+//                .andExpect(model().attribute("message", "Successfully saved account: "+accountNum))
+//                .andExpect(view().name("validAccount"))
+                .andExpect(status().isOk())
+                .andDo(print());
+;
     }
     
-    @Test
+//    @Test
     public void post6DigitAccountNumber2() throws Exception {
     	String accountNum = "";
         this.mockMvc.perform(MockMvcRequestBuilders

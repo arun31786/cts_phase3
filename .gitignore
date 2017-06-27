@@ -1,5 +1,7 @@
 **/libs
 
+/**/node_modules
+/**/data
 /**/.metadata
 /**/RemoteSystemsTempFiles
 /**/Servers

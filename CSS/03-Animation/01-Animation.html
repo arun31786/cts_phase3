@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>CSS3</title>
+	<style>
+		div {
+			width: 20%;
+			height: 300px;
+			background: red;
+			opacity: 0.5;
+		}
+		
+		#firstDiv {
+			margin-left: 120px;
+			margin-right: auto;
+			margin-top: 50px;
+			animation: myfirst 10s;
+			/* Safari and Chrome */
+			-webkit-animation: myfirst 10s;
+		}
+		
+		#secondDiv {
+			margin-left: auto;
+			margin-right: 120px;
+			margin-top: -300px;
+			animation: mySecond 10s;
+			/* Safari and Chrome */
+			-webkit-animation: mySecond 10s;
+		}
+		
+		@keyframes myfirst {
+			from {
+				background: red;
+			}
+			to {
+				background: yellow;
+			}
+		}
+		
+		@-webkit-keyframes myfirst
+		/* Safari and Chrome */
+		
+		{
+			from {
+				background: red;
+			}
+			to {
+				background: green;
+			}
+		}
+		
+		@keyframes mySecond {
+			from {
+				background: blue;
+			}
+			to {
+				background: Cyan;
+			}
+		}
+		
+		@-webkit-keyframes mySecond
+		/* Safari and Chrome */
+		
+		{
+			from {
+				background: blue;
+			}
+			to {
+				background: Cyan;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="firstDiv"></div>
+	<div id="secondDiv"></div>
+
+</body>
+</html>

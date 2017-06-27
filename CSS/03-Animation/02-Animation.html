@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>CSS3</title>
+<style> 
+h1{
+text-align: center;
+color: CornFlowerBlue;
+animation: text 10s;
+-webkit-animation: text 10s; /* Safari and Chrome */
+
+}
+div
+{
+width:20%;
+height:300px;
+background:blue;
+opacity:0.5;
+}
+#firstDiv{
+margin-left:120px;
+margin-right:auto;
+margin-top:50px;
+animation:myfirst 10s;
+-webkit-animation:myfirst 10s; /* Safari and Chrome */
+}
+#secondDiv{
+margin-left:auto;
+margin-right:120px;
+margin-top: -300px;
+animation: mySecond 10s;
+-webkit-animation: mySecond 10s; /* Safari and Chrome */
+}
+
+@keyframes text /* Safari and Chrome */
+{
+from {color: cornFlowerBlue;}
+to {color: Red;}
+}
+
+@-webkit-keyframes text /* Safari and Chrome */
+{
+from {color: cornFlowerBlue;}
+to {color: Red;}
+}
+
+@keyframes myfirst
+{
+from {background:blue;}
+to {background:green;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:blue;}
+to {background:green;}
+}
+
+
+@keyframes mySecond
+{
+0% {background: Aqua;}
+20% {background: CadetBlue;}
+40% {background: DarkGray;}
+60% {background: FloralWhite;}
+80% {background: DarkOrchid;}
+100% {background: PapayaWhip;}
+}
+
+@-webkit-keyframes mySecond /* Safari and Chrome */
+{
+0% {background: Aqua;}
+20% {background: CadetBlue;}
+40% {background: DarkGray;}
+60% {background: FloralWhite;}
+80% {background: DarkOrchid;}
+100% {background: PapayaWhip;}
+}
+
+</style>
+</head>
+<body>
+<h1>10 Seconds animation</h1>
+<div id="firstDiv"></div>
+<div id="secondDiv"></div>
+
+</body>
+</html>

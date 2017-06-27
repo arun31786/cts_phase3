@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Css cube</title>
+		<style>
+			.wrap {
+				perspective: 800px;
+				perspective-origin: 50% 100px;
+			}
+			.cube {
+				
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+				animation: spin 5s infinite linear;
+}
+			.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+				background-color: rgba(255, 255, 255, 0.53);
+				border: 1px solid black;
+				box-shadow: inset 0 0 40px rgba(10,100,125,0.5);
+}
+			.back {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+}
+.front {
+	transform: translateZ(100px);
+}
+			@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+			@keyframes spin-vertical {
+	from { transform: rotateX(0); }
+	to { transform: rotateX(-360deg); }
+}
+
+.cube-wrap.vertical .cube {
+	margin: 0 auto; /* keeps the cube centered */
+
+	transform-origin: 0 100px;
+	animation: spin-vertical 5s infinite linear;
+}
+
+.cube-wrap.vertical .top {
+	transform: rotateX(-270deg) translateY(-100px);
+}
+
+.cube-wrap.vertical .back {
+	transform: translateZ(-100px) rotateX(180deg);
+}
+
+.cube-wrap.vertical .bottom {
+	transform: rotateX(-90deg) translateY(100px);
+}
+		</style>
+	</head>
+	<body>
+		<section class="wrap">
+			<div class="cube">
+				<div class="front">front</div>
+				<div class="back">back</div>
+				<div class="top">top</div>
+				<div class="bottom">bottom</div>
+				<div class="left">left</div>
+				<div class="right">right</div>
+			</div>
+		</section>
+	</body>
+</html>

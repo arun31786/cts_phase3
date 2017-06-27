@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ApplicationController {
 
 	// Add appropriate annotations and code wherever required
-	
 	@Autowired
     private MessageSource messageSource;
 	

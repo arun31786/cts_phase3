@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Animation</title>
+<style>
+#animation-container { 
+animation: inout 3s; 
+animation-iteration-count: infinite;	/* replace 2 with infinite to have continuos changes */
+-webkit-animation: inout 3s; /* Safari nd Chrome */
+-webkit-animation-iteration-count: infinite; 	/* replace 2 with infinite to have continuos changes */
+margin: auto;
+border: 5px cornFlowerBlue solid;
+background: activecaption;
+width: 35%;
+text-align: center;
+margin: 150px auto;
+font-size: 3em;
+} 
+
+@keyframes inout { 
+0%   { transform: scale(0, 0); } 
+25%   { transform: scale(2, 2); }
+50%   { transform: scale(0, 0); }
+100%  { transform: scale(1, 1); } 
+}
+
+@-webkit-keyframes inout { /* Safari nd Chrome */ 
+0%   { -webkit-transform: scale(0, 0); } 
+25%  { -webkit-transform: scale(2, 2); }
+50%  { -webkit-transform: scale(0, 0); }
+100% { -webkit-transform: scale(1, 1); } 
+} 
+</style>
+</head>
+<body>
+<div id="animation-container">DomShom</div>
+</body>
+</html>

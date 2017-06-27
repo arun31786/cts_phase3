@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3</title>
+	<style>
+		div {
+			width: 300px;
+			height: 300px;
+			background: blue;
+			opacity: 0.5;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 50px;
+			/* For Safari 3.1 to 6.0 */
+			-webkit-transition-property: width;
+			-webkit-transition-duration: 4s;
+			-webkit-transition-timing-function: linear;
+			-webkit-transition-delay: 1s;
+			/* Standard syntax */
+			transition-property: width;
+			transition-duration: 4s;
+			transition-timing-function: linear;
+			transition-delay: 1s;
+		}
+		
+		div:hover {
+			width: 200px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div></div>
+
+</body>
+</html>
