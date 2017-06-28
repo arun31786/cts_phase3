@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -92,25 +93,21 @@ public class EmployeeController {
 		} 
 		
 		return "member";
-
 	}
 	
 //	http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/employees?name=mark
 	@RequestMapping(value="/employees",method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody  List<Employee> getEmployees(@RequestParam("name") String name){
-		
+	public @ResponseBody  List<Employee> getEmployees(@RequestParam("name") String name){		
 		Employee emp1 = new Employee(name, 34344.44);
 		Employee emp2 = new Employee("Priya", 35455.00);
 		employees = new ArrayList<Employee>();
 		employees.add(emp1);
 		employees.add(emp2);
-//		System.out.println(MediaType.APPLICATION_JSON);
+//		System.out.println(MediaType.APPLICATION_JSON); 
 		return employees;
 	}
 	
 
-	
-	
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public String addMember(@RequestParam("name") String name, Model model){
 		employees = new ArrayList<Employee>();	
