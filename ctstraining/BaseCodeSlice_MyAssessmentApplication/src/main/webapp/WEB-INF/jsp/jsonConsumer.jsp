@@ -33,12 +33,16 @@
 					var response = JSON.parse(xhr.response);
 					console.log(response);
 					table.style.display = "block";
+
+
 					response.forEach(function(res){
 						addRows(res);
 					})
+					
+					localStorage.setItem("data", JSON.stringify(response));
 
-					alert("Table created");
-					window.location.href = "https://www.facebook.com";
+					//alert("Table created");
+					window.location.href = "http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/";
 				}
 			}
 			xhr.open("POST","http://localhost:8080/BaseCodeSlice_MyAssessmentApplication/mvc/getJson",true);
